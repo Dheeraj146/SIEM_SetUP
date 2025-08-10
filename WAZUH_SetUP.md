@@ -3,37 +3,23 @@
 ## Overview 
 - Wazuh is an open-source SIEM/HIDS/XDR platform that centralizes endpoint telemetry, detects threats, automates response, and supports compliance programs. This repo documents architecture, features, IDS/IPS/EDR context, a single-node Ubuntu deployment, integration patterns (SentinelOne, Suricata), scaling guidance, hardening checklists, SOC playbooks, and troubleshooting. 
 
-|Table of Contents|
-|-----------------|
-|TL;DR — Who, Why, and When to use Wazuh|
-
-|Core Concepts & Terminology (SIEM, HIDS, HIPS, EDR, FIM, Indexer, Decoders, Rules)|
-
-|Architecture & Components (Agent, Manager, Indexer, Dashboard, API)|
-
-|Key Features & Capabilities|
-
-|IDS vs IPS vs EDR — Where Wazuh fits|
-
-|Quick Single-Node Ubuntu Installation (practical commands)|
-
-|Agent deployment examples (Linux & Windows)|
-
-|Integrations — SentinelOne & Suricata (how and why)|
-
-|Active Response (HIPS-like functionality) + sample scripts|
-
-|Scaling & Production Architecture (hardware sizing & clustering)|
-
-|Security & Hardening Checklist|
-
-|SOC Playbooks (ransomware, brute-force, credential theft)|
-
-|Monitoring & Troubleshooting (logs, common errors)|
-
-|Useful commands & config snippets (ossec.conf, rules)|
-
-|Appendix — ports, file locations, references & links|
+|Table of Contents                                                                             |
+|----------------------------------------------------------------------------------------------|
+|TL;DR — Who, Why, and When to use Wazuh                                                       |
+|Core Concepts & Terminology (SIEM, HIDS, HIPS, EDR, FIM, Indexer, Decoders, Rules)            |
+|Architecture & Components (Agent, Manager, Indexer, Dashboard, API)                           |
+|Key Features & Capabilities                                                                   |
+|IDS vs IPS vs EDR — Where Wazuh fits                                                          |
+|Quick Single-Node Ubuntu Installation (practical commands)                                    |
+|Agent deployment examples (Linux & Windows)                                                   |
+|Integrations — SentinelOne & Suricata (how and why)                                           |
+|Active Response (HIPS-like functionality) + sample scripts                                    |
+|Scaling & Production Architecture (hardware sizing & clustering)                              |
+|Security & Hardening Checklist                                                                |
+|SOC Playbooks (ransomware, brute-force, credential theft)                                     |
+|Monitoring & Troubleshooting (logs, common errors)                                            |
+|Useful commands & config snippets (ossec.conf, rules)                                         |
+|Appendix — ports, file locations, references & links                                          |
 
 1 — TL;DR (Executive)
 Use Wazuh when you need centralized detection, log correlation, file integrity monitoring, compliance reporting, and automated response for servers, workstations, and cloud workloads. 
