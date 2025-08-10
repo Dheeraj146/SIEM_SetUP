@@ -33,10 +33,11 @@ Wazuh is an agent-based security platform (HIDS/HIPS + SIEM/XDR capabilities) wh
 
  - Example in Wazuh:
 
- ``` - Detecting multiple failed SSH login attempts from the same IP.
+ <pre> - Detecting multiple failed SSH login attempts from the same IP.
 
  - Spotting a known malicious hash during a file scan.
-```
+
+</pre>
 
 ## 2. IPS — Intrusion Prevention System
 - Purpose: Detect and automatically stop or mitigate malicious activity in real time.
