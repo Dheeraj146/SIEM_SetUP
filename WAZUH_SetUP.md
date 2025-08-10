@@ -20,7 +20,48 @@ Wazuh is an agent-based security platform (HIDS/HIPS + SIEM/XDR capabilities) wh
 
 ---
 
-## **IDS / IPS Use Cases** (where Wazuh fits)
+## 1. IDS — Intrusion Detection System
+- Purpose: Detect malicious activity, policy violations, or suspicious behavior.
+
+- How it works in Wazuh:
+
+ - Collects logs, file integrity events, syscalls, network IDS alerts (if integrated), and correlates them against rules.
+
+ - Alerts the SOC team when suspicious activity is detected.
+
+ - Does not automatically block the activity — detection only.
+
+ - Example in Wazuh:
+
+  - Detecting multiple failed SSH login attempts from the same IP.
+
+ - Spotting a known malicious hash during a file scan.
+
+## 2. IPS — Intrusion Prevention System
+- Purpose: Detect and automatically stop or mitigate malicious activity in real time.
+
+- How it works in Wazuh:
+
+ - Uses Active Response — scripts or commands triggered by rules.
+ 
+ - Can block IPs using firewall rules, kill malicious processes, disable accounts, or integrate with firewalls/EDRs for isolation.
+
+ - Example in Wazuh:
+
+  - Detecting a brute force SSH attack and adding the attacker’s IP to iptables/firewalld to block further attempts.
+
+  - Detecting ransomware activity and instantly isolating the endpoint.
+
+## 3. Wazuh as IDS/HIDS & HIPS
+- Wazuh is a Host-based IDS (HIDS) because it works at the endpoint/host level, not just on the network.
+
+- When you enable Active Response, it also acts as a Host-based IPS (HIPS).
+
+- You can extend this by feeding Network IDS (NIDS) logs (like Suricata or Zeek) into Wazuh so it can correlate network-level detections with host-level detections.
+
+---
+
+### **IDS / IPS Use Cases** (where Wazuh fits)
 - Host-based IDS (HIDS): File Integrity Monitoring, rootkit detection, suspicious process/activity detection.
 
 - Host-based IPS / Active Response: Trigger automated containment actions (block IP, stop process, quarantine files) via Wazuh active-response and integrator workflows.
@@ -29,49 +70,6 @@ Wazuh is an agent-based security platform (HIDS/HIPS + SIEM/XDR capabilities) wh
 documentation.wazuh.com
 
 - Endpoint + EDR correlation: Combine EDR events (SentinelOne, CrowdStrike, etc.) with Wazuh logs for single-pane triage and threat hunting. (See SentinelOne integration notes below.) 
-
----
-
-1. IDS — Intrusion Detection System
-Purpose: Detect malicious activity, policy violations, or suspicious behavior.
-
-How it works in Wazuh:
-
-Collects logs, file integrity events, syscalls, network IDS alerts (if integrated), and correlates them against rules.
-
-Alerts the SOC team when suspicious activity is detected.
-
-Does not automatically block the activity — detection only.
-
-Example in Wazuh:
-
-Detecting multiple failed SSH login attempts from the same IP.
-
-Spotting a known malicious hash during a file scan.
-
-2. IPS — Intrusion Prevention System
-Purpose: Detect and automatically stop or mitigate malicious activity in real time.
-
-How it works in Wazuh:
-
-Uses Active Response — scripts or commands triggered by rules.
-
-Can block IPs using firewall rules, kill malicious processes, disable accounts, or integrate with firewalls/EDRs for isolation.
-
-Example in Wazuh:
-
-Detecting a brute force SSH attack and adding the attacker’s IP to iptables/firewalld to block further attempts.
-
-Detecting ransomware activity and instantly isolating the endpoint.
-
-3. Wazuh as IDS/HIDS & HIPS
-Wazuh is a Host-based IDS (HIDS) because it works at the endpoint/host level, not just on the network.
-
-When you enable Active Response, it also acts as a Host-based IPS (HIPS).
-
-You can extend this by feeding Network IDS (NIDS) logs (like Suricata or Zeek) into Wazuh so it can correlate network-level detections with host-level detections.
-
-
 ## 🧠 **Introduction to EDR (Endpoint Detection and Response)**
 
 **EDR** refers to tools that monitor, record, and analyze activities on endpoints (servers, desktops, laptops) to detect malicious behavior, help in incident response, and enable threat hunting.
