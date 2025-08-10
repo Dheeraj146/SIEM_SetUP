@@ -4,7 +4,8 @@
 The objective of this task is to help students **set up a Wazuh Server using the Quick Start method** and **onboard an Ubuntu machine as an agent**. By completing this task, students will learn how to deploy **Wazuh for security monitoring, log analysis, and threat detection**.
 
 ---
-**What is Wazuh**
+## **What is Wazuh**
+
 Wazuh is an **open-source threat detection, integrity monitoring, and security analytics platform** that centralizes endpoint telemetry and security events so security teams can detect, investigate, and automate response workflows. This repo contains: conceptual overview, IDS/IPS + use-cases, and a step-by-step Ubuntu setup playbook for a single-node lab/prod starter deployment.
 
 ---
